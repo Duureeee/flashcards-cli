@@ -28,11 +28,33 @@ SRS algorithms have a noticeable impact on the short term learning rate, but the
 
 ## Usage
 
-Here is an example of how to create a deck, a couple of cards, and how to study them.
+Run the CLI with a tab-separated cards file:
 
-![video example of a study session](images/study-session.gif)
+```bash
+flashcard cards.txt --order recent-mistakes-first --repetitions 2 --invertCards
+```
 
-Note that for the time being, only a small subset of the features of `flashcards-core` is used: for example there is no way to add tags to any entity, to add context to question and answers, to use any SRS algorithm except for `random`, and no way to configure the algorithm parameters either. On the other end, this application is extremely small, so feel free to peek into the code and send a patch with the features you wish to add. Or at least open an issues for other volunteer to be aware of your interest.
+Supported options:
+
+- `--help`
+- `--order random|worst-first|recent-mistakes-first`
+- `--repetitions <num>`
+- `--invertCards`
+
+Cards file format:
+
+```text
+# comments are ignored
+capital of Mongolia	Ulaanbaatar
+2 + 2	4
+```
+
+Achievements currently reported at the end of a session:
+
+- `SPEED`
+- `CORRECT`
+- `REPEAT`
+- `CONFIDENT`
 
 
 ## Install
